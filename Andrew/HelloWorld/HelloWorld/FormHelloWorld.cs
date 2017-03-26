@@ -22,7 +22,7 @@ namespace HelloWorld
 		private void btnShow_Click(object sender, EventArgs e)
 		{
 			rtShow456.Text = "456789";
-			txtShowHello.Text = "hello minaik!";
+			txtShowHello.Text = "hello minaik again!";
 
 
 		}
