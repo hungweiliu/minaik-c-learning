@@ -21,8 +21,8 @@ namespace HelloWorld
 
 		private void btnShow_Click(object sender, EventArgs e)
 		{
-			rtShow456.Text = "456";
-			txtShowHello.Text = "hello world!";
+			rtShow456.Text = "456789";
+			txtShowHello.Text = "hello minaik!";
 
 
 		}
