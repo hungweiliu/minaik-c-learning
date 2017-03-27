@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnShowTaiwan = new System.Windows.Forms.Button();
-            this.Australia = new System.Windows.Forms.Button();
+            this.btnShowAustralia = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnShowTaiwan
@@ -41,21 +41,21 @@
             this.btnShowTaiwan.Text = "Taiwan";
             this.btnShowTaiwan.UseVisualStyleBackColor = true;
             // 
-            // Australia
+            // btnShowAustralia
             // 
-            this.Australia.Location = new System.Drawing.Point(12, 50);
-            this.Australia.Name = "Australia";
-            this.Australia.Size = new System.Drawing.Size(75, 23);
-            this.Australia.TabIndex = 1;
-            this.Australia.Text = "button1";
-            this.Australia.UseVisualStyleBackColor = true;
+            this.btnShowAustralia.Location = new System.Drawing.Point(12, 50);
+            this.btnShowAustralia.Name = "btnShowAustralia";
+            this.btnShowAustralia.Size = new System.Drawing.Size(75, 23);
+            this.btnShowAustralia.TabIndex = 1;
+            this.btnShowAustralia.Text = "Australia";
+            this.btnShowAustralia.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(549, 343);
-            this.Controls.Add(this.Australia);
+            this.Controls.Add(this.btnShowAustralia);
             this.Controls.Add(this.btnShowTaiwan);
             this.Name = "Form1";
             this.Text = "What a wonderful world.....";
@@ -66,7 +66,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnShowTaiwan;
-        private System.Windows.Forms.Button Australia;
+        private System.Windows.Forms.Button btnShowAustralia;
     }
 }
 
