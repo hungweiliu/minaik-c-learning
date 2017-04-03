@@ -21,7 +21,18 @@ namespace _2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            richShowHi.Text = "Hi!";
+            string hello = "";
+            string str = "";
+            number++;
+            for (int i = 1; i <= number; i++)
+            {
+                str += "!";
+                hello += "Hello World" + str + "\r\n";
+            }
+                richShowHi.Text = (hello);
+            
         }
+
+      
     }
 }
