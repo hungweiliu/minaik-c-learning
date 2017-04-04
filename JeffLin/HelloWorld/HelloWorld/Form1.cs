@@ -16,48 +16,62 @@ namespace HelloWorld
         {
             InitializeComponent();
         }
+        public FontStyle fs = System.Drawing.FontStyle.Regular;
+        public FontFamily fm = new FontFamily("Consolas");
 
+        Random rad_locationX = new Random(Convert.ToInt16(DateTime.Now.Millisecond));
+        Random rad_locationY = new Random(Convert.ToInt16(DateTime.Now.Millisecond+1));
+        Random rad_fontSize = new Random(Convert.ToInt16(DateTime.Now.Millisecond+2));
+        Random rad_fontColorR = new Random(Convert.ToInt16(DateTime.Now.Millisecond+3));
+        Random rad_fontColorG = new Random(Convert.ToInt16(DateTime.Now.Millisecond+4));
+        Random rad_fontColorB = new Random(Convert.ToInt16(DateTime.Now.Millisecond+5));
+        
+        Label[] lbl_showHelloWorld = new Label[1000];
+        int a = 0;
         private void button1_Click(object sender, EventArgs e)
         {
-            txt_Helloworld.Text = ("HelloWorld!");
-            lbl_Show001.Text = "HelloWorld!";
+            lbl_helloWorldShowTimes.Visible = false;
+            tck_helloWorldShowTimes.Visible = false;
+            txt_helloWorldShowTimes.Visible = false;
+            for (int helloWorldShowTimes = 0; helloWorldShowTimes < tck_helloWorldShowTimes.Value; helloWorldShowTimes++)
+            {
+                lbl_showHelloWorld[a] = new Label();
 
+                this.Controls.Add(lbl_showHelloWorld[a]);
+                lbl_showHelloWorld[a].AutoSize = true;
+                lbl_showHelloWorld[a].Location = new System.Drawing.Point(rad_locationX.Next(0, this.Width), rad_locationY.Next(0, this.Height));
+                lbl_showHelloWorld[a].Name = "lbl_Show00" + a.ToString();
+                lbl_showHelloWorld[a].Size = new System.Drawing.Size(80, 12);
+                lbl_showHelloWorld[a].Text = "HelloWorld!";
+                lbl_showHelloWorld[a].Font = new Font(fm, rad_fontSize.Next(3, 32), fs);
+                lbl_showHelloWorld[a].ForeColor = Color.FromArgb(rad_fontColorR.Next(255), rad_fontColorR.Next(255), rad_fontColorR.Next(255));
+                a++;
+            }
         }
-        private void button2_Click(object sender, EventArgs e)
+
+
+        private void tck_helloWorldShowTimes_Scroll(object sender, EventArgs e)
         {
-
-            rtf_Show001.Text = "HelloWorld!2";
+            txt_helloWorldShowTimes.Text = tck_helloWorldShowTimes.Value.ToString();
+            helloWorldShowTimesChange();
         }
 
-        private void tck_value_Scroll(object sender, EventArgs e)
+        private void txt_helloWorldShowTimes_TextChanged(object sender, EventArgs e)
         {
-            txt_value.Text = tck_value.Value.ToString();
-            txt_value2.Text = (tck_value.Value*5).ToString();
-            tck_value2.Value = Convert.ToInt32( txt_value2.Text);
+            tck_helloWorldShowTimes.Value= Convert.ToInt32(txt_helloWorldShowTimes.Text);
+            helloWorldShowTimesChange();
         }
-
-        private void txt_value_TextChanged(object sender, EventArgs e)
+        private void helloWorldShowTimesChange()
         {
-            tck_value.Value= Convert.ToInt32(txt_value.Text);
-            txt_value2.Text = (tck_value.Value * 5).ToString();
-            tck_value2.Value = Convert.ToInt32(txt_value2.Text);
+            btn_ShowData.Visible = true;
+
+
         }
 
-        private void tck_value2_Scroll(object sender, EventArgs e)
+        private void Frm_FirstProgram_Load(object sender, EventArgs e)
         {
-            txt_value2.Text = tck_value2.Value.ToString();
-            txt_value.Text = (tck_value2.Value / 5).ToString();
-            tck_value.Value = Convert.ToInt32(txt_value.Text);
+            WindowState = FormWindowState.Maximized;
+
         }
-
-        private void txt_value2_TextChanged(object sender, EventArgs e)
-        {
-            tck_value2.Value= Convert.ToInt32(txt_value2.Text );
-            txt_value.Text = (tck_value2.Value / 5).ToString();
-            tck_value.Value = Convert.ToInt32(txt_value.Text);
-        }
-
-
-
     }
 }
